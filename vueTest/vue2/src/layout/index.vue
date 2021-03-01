@@ -8,7 +8,9 @@
         <router-link class="l" to="/c">CCCC</router-link>
     </div>
     <div class="app-main">
-      <router-view></router-view>
+      <transition name="fade" mode="out-in">
+        <router-view></router-view>
+      </transition>
     </div>
   </div>
 </template>
@@ -43,5 +45,11 @@
   right: 0;
   top: 50px;
   /* position: relative; */
+}
+.fade-enter-active, .fade-leave-active {
+  transition: opacity .5s;
+}
+.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+  opacity: 0;
 }
 </style>
