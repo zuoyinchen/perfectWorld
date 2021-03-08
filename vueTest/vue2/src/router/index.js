@@ -17,6 +17,7 @@ const router = new VueRouter({
         {
           path: '/a',
           component: A,
+          name: 'a'
         }
       ]
     },
@@ -27,6 +28,7 @@ const router = new VueRouter({
         {
           path: '/b',
           component: B,
+          name: 'b'
         }
       ]
     },
@@ -37,6 +39,7 @@ const router = new VueRouter({
         {
           path: '/c',
           component: C,
+          name: 'c'
         }
       ]
     }

@@ -7,6 +7,7 @@
 
         <router-link class="l" to="/c">CCCC</router-link>
     </div>
+    <crumbs> </crumbs>
     <div class="app-main">
       <transition name="fade" mode="out-in">
         <router-view></router-view>
@@ -14,7 +15,21 @@
     </div>
   </div>
 </template>
+<script>
+import crumbs from '../components/crumbs'
+export default {
+  data() {
+    return {
+      
+    }
+  },
+  components: {
+    crumbs
+  }
+}
+</script>
 <style scoped>
+
 .box {
   width: 200px;
   position: fixed;

@@ -13,8 +13,8 @@ export default {
 </script>
 <style scoped>
 .aa {
-  width: 500px;
+  /* width: 500px;
   height: 500px;
-  background: red;
+  background: red; */
 }
 </style>
