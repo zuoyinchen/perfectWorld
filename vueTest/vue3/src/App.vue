@@ -1,6 +1,8 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png" />
-  <HelloWorld msg="Hello Vue 3 + TypeScript + Vite" />
+  <div>
+      <!-- <HelloWorld msg="Hello Vue 3 + TypeScript + Vite" /> -->
+    <div>{{ a }}</div>
+  </div>
 </template>
 
 <script lang="ts">
@@ -9,6 +11,11 @@ import HelloWorld from './components/HelloWorld.vue'
 
 export default defineComponent({
   name: 'App',
+  data() {
+    return {
+      a: 1213
+    }
+  },
   components: {
     HelloWorld
   }
