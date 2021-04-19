@@ -11,7 +11,7 @@ const router = new VueRouter({
   mode: 'history',
   routes: [
     {
-      path: '/a',
+      path: '/',
       component: layout,
       children: [
         {

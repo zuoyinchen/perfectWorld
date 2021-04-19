@@ -18,7 +18,7 @@
       })
       // 数组对象去重
       arr1 = arr1.reduce((cur, next) => {
-        obj[next.b] ? '' : obj[next.b] = true && cur.push(next)
+        obj[Object.keys(next)[0]] ? '' : obj[Object.keys(next)[0]] = true && cur.push(next)
         return cur
       }, [])
       arr2 = [...new Set(arr2)]
