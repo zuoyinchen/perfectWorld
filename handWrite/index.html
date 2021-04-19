@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // 1 编写一个数组去重函数 是的 unique([1, 'a', {b: 2}, {c: 3}, {b: 2}, '1', 'a']) => [1, 'a', {b: 2}, {c: 3}, '1']
+    let unique = (input) => {
+      let arr1 = []
+      let arr2 = []
+      let obj = {}
+      input.forEach(item => {
+        typeof item == 'object' ? arr1.push(item) : arr2.push(item)
+      })
+      // 数组对象去重
+      arr1 = arr1.reduce((cur, next) => {
+        obj[next.b] ? '' : obj[next.b] = true && cur.push(next)
+        return cur
+      }, [])
+      arr2 = [...new Set(arr2)]
+      return [...arr1, ...arr2]
+    }
+    console.log(unique([1, 'a', {b: 2}, {c: 3}, {b: 2}, '1', 'a']))
+    // 2 实现一个版本号对比函数 compareVersion('4.0.1.0', '=', '0.4.1.0') compareVersion('4.0.1.0', '>', '4') compareVersion('4.0.1.0', '<', '4.1.0')
+
+    let compareVersion = (verA, operator, verB) => {
+      // 初始化数据
+      let check = (item) => {
+        let arr = item.split('.')
+        let len = arr.length
+        let str = ''
+        if (len != 4) {
+          for(let i = 0; i < 4 - len; i++) {
+            arr.push('0')
+          }
+        }
+        arr.forEach(item => {
+          str += item
+        })
+        return Number(str)
+      }
+      // 计算
+      let n1 = check(verA)
+      let n2 = check(verB)
+      switch (operator) {
+        case '=':
+          return n1 == n2 ? true : false
+          break;
+        case '<':
+          return n1 < n2 ? true : false
+        break;
+        case '>':
+          return n1 > n2 ? true : false
+        break;
+      }
+    }
+    console.log(compareVersion('5.0.1.0', '<', '4.1.1.0')) 
+  </script>
+</body>
+</html>
