@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>游资龙虎榜</title>
+    <link rel="icon" href="static/images/head.png" type="image/x-icon"/>
+    <link href="static/css/default.css" rel="stylesheet" type="text/css"/>
+    <link href="static/css/tk_yzlhb_yz.css" rel="stylesheet" type="text/css"/>
+	<link href="static/css/tk_yzlhb_black.css" rel="stylesheet" type="text/css"/>
+	<link href="static/css/tk_yzlhb_white.css" rel="stylesheet" type="text/css"/>
+	<script type="text/javascript" src="static/js/bdtj.js"></script>
+</head>
+<body >
+
+<div id="mainView" >
+    <div id='top'class="clear">
+        <div class='top-left'>
+            <div class="date_info" id="date_info">
+                <span id="date_week"></span>
+                <span id="date_time"></span>
+            </div>
+            <div id="markInfo" class="mark_info">相关数据仅供参考</div>
+           
+        </div>
+        <div id="headSearch" class="p-head-search">
+            <div class="search-input-warp">
+                <input id="search" placeholder="游资或股票搜索"><span id='searchIcon' class="search-icon"></span>
+                <span class='p-search-tip'>暂无相关数据！</span>
+            </div>
+            <span id="vipParam" style="float: right; margin-top: 20px; color: #888C91;">会员剩余: <font id="vipDay">0</font>天</span><br/>
+            <ul id="searchSuggUl" class="search-sugg-ul"></ul>
+        </div>
+        <div style="float: right; position: relative; margin-right: 5px; margin-top:15px; height:22px; width:4%;">
+        	<a href="#" onclick="javascript: $('#pay').css('display','');" id="vipBuy" style="float: right; text-decoration: none; color: #888C91;">点击充值会员</a><br/>
+        </div>
+        <div style="float: right; position: relative; margin-top:15px; height:22px; width:3%;">
+            <a href="analyze.html" target="_blank" id="trend" style="float: right; text-decoration: none; color: #888C91;">走势分析</a>
+        </div>
+        <div style="float: right; position: relative; margin-top:15px; height:22px; width:3%;">
+            <a href="notice.html" target="_blank" id="trend" style="float: right; text-decoration: none; color: #888C91;">重要公告</a>
+        </div>
+        <div style="float: right; position: relative; margin-top:15px; height:22px; width:3%;">
+            <a href="big_buy.html" target="_blank" id="trend" style="float: right; text-decoration: none; color: #888C91;">大宗交易</a>
+        </div>
+        <div class="type_info">
+            <span class="type_item active" id='typeYZ'>游资图谱</span><span class="type_item" id='typeLHB'>龙虎榜</span>
+        </div>
+    </div>
+
+    <div class="lhb-scroll-bar drawWrap">
+        <div id="drawView" class='yzDrawView'></div>
+        <div id="drawView2"></div>
+    </div>
+    
+    <div id="pay" style="border-top-left-radius: 8px; background: #F2F2F2; border-top-right-radius: 8px; border-bottom-left-radius: 8px; border-bottom-right-radius: 8px; padding: 10px 10px 10px 10px; width:505px; height:415px; position:fixed; top:40%; left:50%; margin-left:-250px; margin-top:-150px; display: none;">
+        <!-- <div style="cursor:pointer; width: 20px; height: 18px; color: gray; margin-left: 96%; text-align: center;" onclick="javascript: $('#pay').css('display','none');">x</div> -->
+        <div style="margin-top: 5px; margin-left: 4px; height: 105px; color: #01AAED; font-size: 15px;">
+                                    完成扫码支付后, 请在支付宝账单中将支付成功的<font color="red">订单号</font>, 或者微信 >支<br/>付>钱包>账单中将<font color="red">转账单号</font>填入图片下面的输入框中,并点击确定,完成<br/>充值! 该订单号就是您的唯一登陆账号(联系客服包年<font color="red">七折</font>)!<br/><br/>
+            <div style="color: red; font-size: 14px;">联系QQ: 2735726532 微信: zeroniukj (包月: 18元/10天或49元/31天)</div>
+        </div>
+        <img height="210px" width="98%" alt="" src="static/images/pay.png">
+        <div style="height: 20px; margin-top: 10px; width: 98%;">
+            <input class="tl-price-input" id="orderNo" type="text" value="" size="55" placeholder="请输入支付宝订单号或微信转账单号, 建议复制黏贴"/>
+            <a href="#" onclick="setOrderNo($('#orderNo').val());" class="button blue">确定</a>
+        </div><br/>
+        <font color="#888C91" size="1px" style="margin-left: 2px;">注: 充值成功后请等待<font color="red">两分钟</font>再次刷新页面即可访问, 只有会员才能访问本站</font>
+    </div>
+    
+</div>
+
+
+</body>
+
+<script type="text/javascript" src="static/js/fingerprint2.js"></script>
+<script type="text/javascript" src="static/js/jquery.js"></script>
+<script type="text/javascript" src="static/js/d3.v4.min.js"></script>
+<script type="text/javascript" src="static/js/laydate.js"></script>
+<script type="text/javascript" src="static/js/jquery.cookie.js"></script> 
+<script type="text/javascript" src="static/js/req.js"></script>
+<script type="text/javascript" src="static/js/tk_yzlhb_common.js"></script>
+<script type="text/javascript" src="static/js/tk_yzlhb_yz.js"></script>
+<script type="text/javascript" src="static/js/ths_cookie.js"></script>
+<script>
+    function getUrlParam() {
+        var htmlParam =decodeURI(location.search.substring(1));
+        var htmlArray = htmlParam.split("&");
+        var objData = {};
+		
+        for (var row=0; row<htmlArray.length; row++)
+        {
+            var a = htmlArray[row].split("=");
+
+            if (a.length >1)
+            {
+                objData[a[0]] = a[1]
+            }
+        }
+        return objData;
+    }  
+	
+	var obj = getUrlParam();
+	color = obj["color"] == "1"?"c-white":"c-black";
+	
+	if(typeof obj["bkcolor"]!=="undefined" && obj["bkcolor"].indexOf("tdxbkcolor")=="-1" && obj["color"] == "0"){
+		document.body.style.backgroundColor = "#"+obj["bkcolor"]  
+		
+		var style = document.createElement('style');
+		style.innerHTML=".c-black .lhb-scroll-bar::-webkit-scrollbar{background-color:#"+obj["bkcolor"]+"}";
+		document.head.appendChild(style)
+		
+	}
+	
+    document.body.className = color
+    document.oncontextmenu = function(){
+	　　return false;
+	}
+    function setOrderNo(o) {
+    	if('' == o) {
+    		alert('请输入订单号');
+    		return;
+    	}
+		$.cookie('zero_user_sign_cookie', o, {expires: 1024, path: '/zero'});
+		alert("提交成功! 请稍等两分钟后按F5刷新本页面\r\n\r\n支付宝示例: 202004202200149342XXXXXXXXXX \r\n微 信 示 例: 100004990120XXXXXXXXXXXXXXXX");
+		$('#orderNo').val('');
+		/* window.location.reload(); */
+	}
+</script>
+</html>

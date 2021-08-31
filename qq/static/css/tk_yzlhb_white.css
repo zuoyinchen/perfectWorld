@@ -1,0 +1,246 @@
+body.c-white{
+  color: #35434b;
+  background-color: #fff;
+}
+.c-white .loading{
+  background:url("../images/ui_warning_loading_white.gif") no-repeat center center;
+}
+.c-white .date_info{
+  background: url("../images/ca.png") no-repeat 115px 3px;
+}
+.c-white .date_info:hover{
+  border:1px solid #426EC1;
+}
+.c-white .mark_info{
+  color:#888C91; 
+}
+.c-white .p-view-link{
+  stroke: #aaa;
+} 
+.c-white .p-view-rect-4.p-view-rect rect{
+  fill:#f0f5fa;
+}
+.c-white .p-view-rect text{
+  fill:#fff;
+}
+.c-white .p-view-rect.p-view-rect-4 text{
+  fill:#35434b;
+}
+.c-white .p-head-search .search-sugg-ul{
+  background-color:#ebeef2;
+  color:#333;
+  
+}
+.c-white .p-head-search input{
+  color:#35434b;
+  border:1px solid #4e515c;
+}
+.c-white .p-head-search .search-sugg-item:hover,
+.c-white .p-head-search .search-sugg-item.sel_item{
+  background-color:#fff;
+  color:#2b9dea; 
+}
+/*****游资详情********/   
+.c-white .time-item{
+  border-left:1px solid #d9dfe5;
+}
+.c-white .time-point>b:before{
+  background-color: rgba(0, 119, 192, 0.3);
+}
+.c-white .time-point>b{
+  background-color: #0077c0;
+}
+.c-white .time-point>span{
+  color:#979fa8;
+}
+.c-white .content-item-title{
+  color:#35434b;
+}
+.c-white .table-sblx-3r{
+  background-color:#426EC0;
+  color:#fff;
+}
+.c-white .sblx-3r{
+  background-color:#426EC0;
+  color:#fff;
+}
+.c-white .yzmc-title{
+  color:#35434b;
+}
+.c-white .yz-explain{
+  color:#35434b;
+}
+.c-white .relation-title{
+  color:#35434b;
+}
+.c-white .relation-item{
+  color:#35434b;
+}
+.c-white .relation-item>b{
+  background-color:#d8d8d8;
+}
+/*******个股营业部********/
+.c-white .gg-left .time-list{
+  border-right:1px solid #d9dfe5;
+}
+.c-white .time-history-title{
+  color: #35434b;
+}
+.c-white .time-point-item{
+  color: #8e9baa;
+}
+.c-white .time-point-item>b{
+  background-color: #d8d8d8;
+}
+.c-white .time-point-item.active{
+  color: #26a3f0;
+}
+.c-white .time-point-item.active>b:before{
+  background-color: rgba(0, 119, 192, 0.3);
+}
+.c-white .time-point-item.active>b{
+  background-color: #0077c0;
+}
+.c-white .lhb-div{
+  background-color: #f0f5fa;
+}
+.c-white .lhbgg-info .sbmc-list{
+  color: #8f9397; 
+}
+.c-white .lhbgg-info .sbcje{
+  color: #8f9397;
+}
+.c-white .lhb-tab .lhb-tab-item{
+  background-color:#f0f5fa;
+  color:#8f9397;
+}
+.c-white .lhb-tab .lhb-tab-item.active{
+  background-color:#26a3f0;
+  color:#fff;
+}
+.c-white .lhbgg-info .tjlhb-btn{
+  border:1px solid #06A0EB;
+}
+.c-white .lhbgg-info .tjlhb-btn a{
+  color:#35434b;
+}
+.c-white .lhbgg-info .tjlhb-btn a:hover{
+  color:#06A0EB;
+}
+/*******表格*********/
+.c-white .grid-table.grid-border{
+  border:1px solid #e7ebef;
+}
+
+.c-white .grid-table thead th{
+  background: #f0f5fa ;
+color: #8e9baa;
+}
+.c-white .grid-table tbody td{
+  border-top:1px solid #fff;
+}
+.c-white .grid-color2 tr[role='row_odd'] {
+  background-color: #f0f5fa;
+}
+.c-white .grid-color2 tr[role='row_even'] {
+  background-color: #fff;
+}
+.c-white .grid-table tbody td[filed='gpmc']:hover{
+  color:#26a3f0
+}
+.c-white .grid-table tbody td .yyb-yz{
+  border:1px solid #CD3232;
+  color:#CD3232;
+}
+
+/*******游资图谱,龙虎榜 切换页 *******/
+.c-white .type_item.active{
+  background-color:#0077c0;
+  color:#fff;
+}
+.c-white .type_info .type_item{
+  border:1px solid #0077c0;
+}
+
+/****龙虎榜 页面*****/
+.c-white .lhb-head .lhb-head-search input{
+  color:#35434b;
+  border:1px solid #4e515c;
+}
+.c-white .lhb-head-search .search-suggess-warp{
+  background-color:#fff;
+}
+.c-white .lhb-head .lhb-head-tab-item{
+  border:1px solid #0077c0;
+}
+.c-white .lhb-head .lhb-head-tab-item.active{
+  background-color: #0077c0;
+  color:#fff;
+}
+.c-white .lhb-body-left  .stock-wrap{
+  background-color:#f0f5fa;
+}
+.c-white .lhb-body-left .stock-wrap .sc-item{
+  border-bottom:1px solid #fff;
+}
+.c-white .lhb-body-left .stock-wrap .sc-name{
+  color:#26a3f0;
+}
+
+/**keyboard_table**/
+.c-white .tdx_keyboard_table{
+  border:1px solid #4e515c;
+}
+.c-white .tdx_keyboard_table .keyboard-sel-row,.tdx_keyboard_table tr:hover{
+  background-color:#4e515c ;
+  color:#fff;
+}
+
+/******滚动条样式自定义*******/
+.c-white .lhb-scroll-bar::-webkit-scrollbar{
+  background-color:#fff; 
+}
+.c-white .lhb-scroll-bar::-webkit-scrollbar-thumb{
+  background: rgb(221, 229, 247);
+  /* border:0; */
+}
+
+/*****表单控件样式********/
+.c-white .form-btn{
+  border:1px solid #ddd;
+  background-color:#fff;
+}
+
+/***laydate UI 样式覆盖***/
+body.c-white .layui-laydate, body.c-white .layui-laydate-hint{
+  background-color: #f0f5fa;
+  border:1px solid #fff;
+}
+
+body.c-white .layui-laydate-header{
+  border-bottom:1px solid #fff;
+}
+body.c-white .layui-laydate-header i{
+  color:#35434b;
+}
+body.c-white .layui-laydate-header .laydate-set-ym{
+  color:#35434b;
+}
+
+body.c-white .layui-laydate-content th{
+  color:#979fa8;
+}
+body.c-white .layui-laydate-content td{
+  color:#35434b;
+}
+body.c-white .layui-laydate .layui-this{
+  background-color:#426EC1!important;
+}
+body.c-white .layui-laydate-content .laydate-day-next, body.c-white .layui-laydate-content .laydate-day-prev{
+  color:#979fa8;
+}
+body.c-white .layui-laydate .laydate-disabled,body.c-white .layui-laydate .laydate-disabled:hover{
+  color:#979fa8!important;
+}
+
+

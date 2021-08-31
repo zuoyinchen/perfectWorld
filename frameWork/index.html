@@ -1,0 +1,31 @@
+<script>
+  // debugger
+var lengthOfLongestSubstring = function(s) {
+  let minIndex = 0
+  let ans = 0
+  for(let i = 0; i < s.length; i++) {
+    if (s.indexOf(s[i], minIndex) < i) {
+      minIndex = s.indexOf(s[i], minIndex) + 1
+    } else {
+      ans = Math.max(ans, i - minIndex + 1)
+    }
+  }
+  return ans
+};
+console.log(lengthOfLongestSubstring('aaavv'))
+var findMedianSortedArrays = function(nums1, nums2) {
+  let num = [...nums1, ...nums2].sort((a,b)=> a-b)
+  // let arr = num.sort()
+  let mid = Math.floor(num.length / 2)
+  let result 
+  if (num.length % 2 !== 0) {
+    console.log(mid, num)
+    result = num[mid]
+  } else {
+    console.log(mid)
+    result = (num[mid] + num[mid + 1]) / 2
+  }
+  return result
+};
+console.log(findMedianSortedArrays([3],[-2, -1]))
+</script>
