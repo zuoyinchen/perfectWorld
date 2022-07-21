@@ -28,4 +28,26 @@ var findMedianSortedArrays = function(nums1, nums2) {
   return result
 };
 console.log(findMedianSortedArrays([3],[-2, -1]))
+
+
+let arr = ['张三', '张三', '王二', '李四', '王二']
+
+const obj = arr.reduce((pre, next) => {
+  pre[next] ? pre[next]++ : pre[next] = 1
+  return pre
+}, {})
+
+const fn = (arr) => {
+  let obj = {}
+  for (let key in arr) {
+    if (obj[arr[key]]) {
+      obj[arr[key]]++
+    } else {
+      obj[arr[key]] = 1
+    }
+  }
+  return obj
+}
+console.log(obj)
+console.log(fn(arr))
 </script>

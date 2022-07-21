@@ -1,22 +1,25 @@
 <template>
   <div id="app">
     <!-- <img alt="Vue logo" src="./assets/logo.png"> -->
-    <HelloWorld v-if="false" msg="Welcome to Your Vue.js App"/>
+    <HelloWorld v-if="true" msg="Welcome to Your Vue.js App"/>
     <!-- <gold></gold> -->
-    <calendar></calendar>
+    <!-- <calendar></calendar> -->
+    <!-- <city></city> -->
   </div>
 </template>
 
 <script>
 import HelloWorld from './components/HelloWorld.vue'
 // import gold from './components/gold.vue'
-import calendar from './components/calendar.vue'
+// import calendar from './components/calendar.vue'
+// import city from './components/city.vue'
 export default {
   name: 'App',
   components: {
     HelloWorld,
     // gold,
-    calendar
+    // calendar,
+    // city
   }
 }
 </script>
